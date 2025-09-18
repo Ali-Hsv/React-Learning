@@ -5,11 +5,11 @@ import Login from './Login'
 function App() {
 
   return (
-    <>
-      <div>
-        <Login/>
-      </div>
-    </>
+    <div className='flex flex-col gap-5'>
+      <Login/>
+      <hr />
+      <Login/>
+    </div>
   )
 }
 
