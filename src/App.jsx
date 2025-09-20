@@ -1,34 +1,31 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
+  
+  const [firstName, setFirstName] = useState("Musteceb");
+  const [lastName, setLastName] = useState("Memmedzade")
 
-  const [firstName, setFirstName] = useState('Ali');
-  const [lastName, setLastName] = useState('Alisoy');
+  useEffect(()=>{
+    console.log("work every time")
+  });
 
-  const changeLastname = ()=>{
-    setLastName('Besirli')
-  }
+  useEffect(()=>{
+    console.log("work in first render")
+  }, []);
 
-  const [name, setName] = useState(["name1", "name2", "name3", "name4", "name5"]);
+  useEffect(()=>{
+    console.log("work in first render & when change firstName useState")
+  }, [firstName]);
 
+  useEffect(()=>{
+    console.log("work in first render & when change lastName useState")
+  }, [lastName]);
 
   return (
-    <div className='flex flex-col text-2xl items-center'>
-      <div className='flex flex-col items-center mb-5'>
-        <p>{firstName}</p>      
-        <p>{lastName}</p> 
-      </div> 
-      <div className=''>
-        <button onClick={()=>{setFirstName("Mehemmed")}} className='rounded p-2 px-3 bg-slate-600 text-center text-white'>Change Name</button>
-        <button onClick={changeLastname} className='ml-3 rounded p-2 px-3 bg-slate-600 text-center text-white'>Change Lastname</button>
-      </div>   
-
-      <div className='flex flex-col items-center mt-5'>
-        {name.map((name, index) => (
-          <div key={index}>{name}</div>
-        ))}
-      </div>  
+    <div className='flex flex-col text-2xl items-center gap-3'>
+        <button onClick={()=>{setFirstName("Atas")}} className='p-3 px-5 rounded-xl bg-slate-700 hover:bg-slate-800 text-slate-200'>Change Name</button>
+        <button onClick={()=>{setLastName("Memmedov")}} className='p-3 px-5 rounded-xl bg-slate-700 hover:bg-slate-800 text-slate-200'>Change Lastname</button>
     </div>
   )
 }
