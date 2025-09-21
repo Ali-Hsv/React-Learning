@@ -12,13 +12,24 @@ function App() {
   }
 
   const getUserById = async(userId) => {
-    const responseId = await axios.get(`${BASE_URL}/users/${userId}`);
-    console.log(responseId.data)
+    const response = await axios.get(`${BASE_URL}/users/${userId}`);
+    console.log(response.data)
+  }
+
+  const createUser = async(newUser) => {
+    const response = await axios.post(`${BASE_URL}/users`, newUser)
+    console.log("response", response.data);
   }
 
   useEffect(() => {
     // getAllUsers();
-    getUserById(1);
+    // getUserById(1);
+
+    const newUser = {
+      "username" : "Rick",
+      "password" : "4124"
+    }
+    createUser(newUser);
   }, [])
 
   return (

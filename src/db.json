@@ -1,14 +1,19 @@
 {
-    "users": [
-        {
-            "id" : 1,
-            "username" : "Muhtar",
-            "password" : "1234" 
-        },
-        {
-            "id" : 2,
-            "username" : "Jack",
-            "password" : "6357" 
-        }
-    ]
+  "users": [
+    {
+      "id": "1",
+      "username": "Muhtar",
+      "password": "1234"
+    },
+    {
+      "id": "2",
+      "username": "Jack",
+      "password": "6357"
+    },
+    {
+      "id": "2cc2",
+      "username": "Rick",
+      "password": "4124"
+    }
+  ]
 }
