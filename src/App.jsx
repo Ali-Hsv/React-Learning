@@ -1,21 +1,29 @@
 import { useEffect, useState } from 'react'
 import './styles/App.css'
-import Header from './Header'
-import { projects } from './Data'
-import Courses from './Courses'
+import axios from 'axios'
+
+const BASE_URL = 'http://localhost:3005'
 
 function App() {
 
+  const getAllUsers = async() => {
+    const response = await axios.get(BASE_URL + '/users');
+    console.log(response.data)
+  }
+
+  const getUserById = async(userId) => {
+    const responseId = await axios.get(`${BASE_URL}/users/${userId}`);
+    console.log(responseId.data)
+  }
+
+  useEffect(() => {
+    // getAllUsers();
+    getUserById(1);
+  }, [])
+
   return (
     <>
-      <Header />
-      <div className='my-6 w-full h-auto flex flex-col lg:flex-row items-center lg:items-start justify-around'>
-        {
-          projects?.map((course)=>(
-            <Courses key={course.id} course={course}/>
-          ))
-        }
-      </div>
+      
     </>
   )
 }
