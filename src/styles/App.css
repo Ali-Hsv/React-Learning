@@ -10,3 +10,6 @@
 .input-def{
     @apply bg-slate-500 rounded-lg border border-spacing-4 border-slate-800 outline-none text-slate-200 text-center py-3
 }
+.card{
+    @apply w-3/5 lg:w-1/5 h-auto bg-slate-500 rounded-lg overflow-hidden cursor-pointer hover:scale-105 hover:shadow-md hover:shadow-slate-800 transition-all
+}
