@@ -2,30 +2,42 @@ import { useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
+
   
-  const [firstName, setFirstName] = useState("Musteceb");
-  const [lastName, setLastName] = useState("Memmedzade")
+  const [number1, setNumberOne] = useState(0);
+  const [number2, setNumberTwo] = useState(0);
 
-  useEffect(()=>{
-    console.log("work every time")
-  });
+  const [obResult, setObResult] = useState("No Result");
 
-  useEffect(()=>{
-    console.log("work in first render")
-  }, []);
+  const findAverage = () => {
+    const totalResult = average() / 2;
+    wright(totalResult);
+  }
 
-  useEffect(()=>{
-    console.log("work in first render & when change firstName useState")
-  }, [firstName]);
+  const average = () => {
+    const total = (number1 + number2);
+    debugger;
+    return total;
+  }
 
-  useEffect(()=>{
-    console.log("work in first render & when change lastName useState")
-  }, [lastName]);
+  const wright = (result)=>{
+    debugger;
+    console.log(`Result is - ${result}`);
+    setObResult(`Result is - ${result}`);
+  }
+
+
 
   return (
-    <div className='flex flex-col text-2xl items-center gap-3'>
-        <button onClick={()=>{setFirstName("Atas")}} className='p-3 px-5 rounded-xl bg-slate-700 hover:bg-slate-800 text-slate-200'>Change Name</button>
-        <button onClick={()=>{setLastName("Memmedov")}} className='p-3 px-5 rounded-xl bg-slate-700 hover:bg-slate-800 text-slate-200'>Change Lastname</button>
+    <div className='flex-col-item text-2xl gap-3'>
+
+      <input type="number" className='input-def' value={number1} onChange={(e)=> setNumberOne(Number(e.target.value))}/>
+
+      <input type="number" className='input-def' value={number2} onChange={(e)=> setNumberTwo(Number(e.target.value))}/>
+
+      <button onClick={findAverage} className='button-def'>Find The Average</button>
+
+      <div>{obResult}</div>
     </div>
   )
 }

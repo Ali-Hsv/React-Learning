@@ -1,0 +1,12 @@
+.button-def{
+    @apply p-3 px-5 rounded-xl bg-slate-700 hover:bg-slate-800 text-slate-200
+}
+.flex-col-item{
+    @apply flex flex-col items-center justify-center
+}
+.flex-row-item{
+    @apply flex flex-row items-center justify-center
+}
+.input-def{
+    @apply bg-slate-500 rounded-lg border border-spacing-4 border-slate-800 outline-none text-slate-200 text-center py-3
+}
