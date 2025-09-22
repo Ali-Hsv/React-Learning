@@ -3,8 +3,6 @@ import './styles/App.css'
 import axios from 'axios'
 import Currency from './components/Currency'
 
-const BASE_URL = ''
-
 function App() {
 
   return (
