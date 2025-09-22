@@ -2,3 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+    padding: 0px;
+    margin: 0px;
+    height: 100vh;
+    background-image: url('../assets/images/bg.jpg');
+    background-repeat: no-repeat;      
+    background-position: top;       
+    background-size: 280px 280px; 
+    background-color: #111B1D;           
+}
